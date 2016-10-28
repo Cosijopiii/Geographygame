@@ -29,10 +29,15 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+            <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button2"
+                android:onClick="startMap" />
+
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_scrolling" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -42,5 +47,7 @@
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <include layout="@layout/content_scrolling" />
 
 </android.support.design.widget.CoordinatorLayout>
