@@ -19,8 +19,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:contentScrim="@drawable/mapimg"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            android:background="@drawable/mapdark"
+            android:elevation="7dp">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -28,13 +30,6 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-            <Button
-                android:text="Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button2"
-                android:onClick="startMap" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -46,7 +41,9 @@
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@drawable/ic_shuffle_white_48dp"
+        app:fabSize="normal"
+        app:elevation="8dp" />
 
     <include layout="@layout/content_scrolling" />
 

@@ -7,15 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import static com.google.android.gms.maps.GoogleMap.MAP_TYPE_SATELLITE;
 
 public class MapGame extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -37,16 +35,12 @@ public class MapGame extends AppCompatActivity implements OnMapReadyCallback {
                         .setAction("Action", null).show();
             }
         });
-
         mapView= (MapView) findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         if(mapView!=null){
             mapView.getMapAsync(this);
         }
-
-
     }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -58,7 +52,6 @@ public class MapGame extends AppCompatActivity implements OnMapReadyCallback {
         super.onStart();
         mapView.onStart();
     }
-
     @Override
     protected void onStop() {
         super.onStop();
@@ -67,29 +60,26 @@ public class MapGame extends AppCompatActivity implements OnMapReadyCallback {
 
     @Override
     public void onMapReady(GoogleMap map) {
-        map.setMapType(GoogleMap.MAP_TYPE_HYBRID	);
+        map.setMapStyle( MapStyleOptions.loadRawResourceStyle(this, R.raw.styleold));
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(42.935066, 12.367178),4));
-        map.addMarker(new MarkerOptions().position(new LatLng(42.935066, 12.367178)).title("ITA"));
+        map.addMarker(new MarkerOptions().position(new LatLng(42.935066, 12.367178)));
+        map.getUiSettings().setMapToolbarEnabled(false);
     }
-
     @Override
     protected void onPause() {
         mapView.onPause();
         super.onPause();
     }
-
     @Override
     protected void onDestroy() {
         mapView.onDestroy();
         super.onDestroy();
     }
-
     @Override
     public void onLowMemory() {
         super.onLowMemory();
         mapView.onLowMemory();
     }
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -98,8 +88,6 @@ public class MapGame extends AppCompatActivity implements OnMapReadyCallback {
             mapViewBundle = new Bundle();
             outState.putBundle(MAPVIEW_BUNDLE_KEY, mapViewBundle);
         }
-
         mapView.onSaveInstanceState(mapViewBundle);
     }
-
 }
