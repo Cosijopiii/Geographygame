@@ -1,21 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.unistmo.geographygame.ScrollingActivity"
-    tools:showIn="@layout/activity_scrolling"
-    android:id="@+id/scroll">
+    tools:showIn="@layout/activity_scrolling">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
-        <ExpandableListView
-            android:layout_width="match_parent"
+        <TextView
+            android:text="Escoja una categoria"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/expandibleList" />
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/textView"
+            android:id="@+id/textView2"
+            android:textSize="18sp"
+            android:paddingBottom="20dp"
+            android:textColor="@android:color/background_dark"
+            android:fontFamily="sans-serif-condensed" />
+
+        <Button
+            android:text="Jugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnStarGame"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="41dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:fontFamily="sans-serif-condensed" />
+
+        <TextView
+            android:text="Para empezar el juego"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:layout_above="@+id/textView2"
+            android:layout_alignEnd="@+id/btnStarGame"
+            android:layout_marginBottom="31dp" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:id="@+id/radioGroup"
+            android:checkedButton="@+id/rbtnamerica"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentStart="true">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:text="America"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rbtnAmerica"
+                    android:layout_weight="1"
+                    android:duplicateParentState="false"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:text="Europa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rbtnEurope"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="Asia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rbtnAsia"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:text="Africa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rbtnAfrica"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1.18">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/america_512"
+                    android:id="@+id/imageView7"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/europe_512"
+                    android:id="@+id/imageView8"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/asia_512"
+                    android:id="@+id/imageView9"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/africa_512"
+                    android:id="@+id/imageView11"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+        </RadioGroup>
+
     </RelativeLayout>
-</ScrollView>
+
+</RelativeLayout>

@@ -23,9 +23,7 @@ public class ScrollingActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         controlActivity=new ControlActivity(this);
-        controlActivity.create();
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(view -> startMap(view));
+
     }
 
     public void startMap(View view){
