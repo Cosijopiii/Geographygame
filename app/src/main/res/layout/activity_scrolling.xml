@@ -45,6 +45,7 @@
         app:fabSize="normal"
         app:elevation="8dp" />
 
-    <include layout="@layout/content_scrolling" />
+    <include layout="@layout/content_scrolling"
+        android:layout_height="match_parent" />
 
 </android.support.design.widget.CoordinatorLayout>

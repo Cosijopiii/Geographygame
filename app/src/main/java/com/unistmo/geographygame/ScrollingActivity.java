@@ -9,23 +9,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ExpandableListAdapter;
+
+import java.util.List;
 
 public class ScrollingActivity extends AppCompatActivity {
 
+    ControlActivity controlActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        controlActivity=new ControlActivity(this);
+        controlActivity.create();
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startMap(view);
-            }
-        });
+        fab.setOnClickListener(view -> startMap(view));
     }
 
     public void startMap(View view){
