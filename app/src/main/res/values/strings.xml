@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Geography game</string>
+    <string name="app_name">GeoGame</string>
     <string name="large_text">
         La geografía (del latín geographĭa, y este del griego «γεωγραφία» "geografía" ) es la ciencia que trata
         de la descripción o de la representación gráfica de la Tierra.1 2 En sentido amplio es la ciencia que estudia
@@ -20,4 +20,10 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_map_game">MapGame</string>
     <string name="google_android_map_api_key">AIzaSyB6GqNWWoaHmjDDXeFp4c0PfUj5FzDqkEk</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_categories">Categories</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

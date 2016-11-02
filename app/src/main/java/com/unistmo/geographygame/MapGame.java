@@ -1,5 +1,6 @@
 package com.unistmo.geographygame;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,17 +26,6 @@ public class MapGame extends AppCompatActivity implements OnMapReadyCallback {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_game);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         int i=getIntent().getIntExtra("mode",0);
 
@@ -52,11 +42,26 @@ public class MapGame extends AppCompatActivity implements OnMapReadyCallback {
                 break;
         }
 
-        mapView= (MapView) findViewById(R.id.map);
-        mapView.onCreate(savedInstanceState);
-        if(mapView!=null){
-            mapView.getMapAsync(this);
-        }
+//        mapView= (MapView) findViewById(R.id.map);
+//        mapView.onCreate(savedInstanceState);
+//        if(mapView!=null){
+//            mapView.getMapAsync(this);
+//        }
+        hideSystemUI();
+
+    }
+    private void hideSystemUI() {
+        // Set the IMMERSIVE flag.
+        // Set the content to appear under the system bars so that the content
+        // doesn't resize when the system bars hide and show.
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
     }
     @Override
     protected void onResume() {

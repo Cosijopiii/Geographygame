@@ -6,140 +6,49 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.unistmo.geographygame.ScrollingActivity"
-    tools:showIn="@layout/activity_scrolling">
+    tools:showIn="@layout/activity_scrolling"
+    android:background="@android:color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-
-        <TextView
-            android:text="Escoja una categoria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignStart="@+id/textView"
-            android:id="@+id/textView2"
-            android:textSize="18sp"
-            android:paddingBottom="20dp"
-            android:textColor="@android:color/background_dark"
-            android:fontFamily="sans-serif-condensed" />
+        android:background="@android:color/white">
 
         <Button
-            android:text="Jugar"
+            android:text="Empezar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnStarGame"
+            android:id="@+id/button2"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:elevation="8dp"
+            android:textSize="24sp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="41dp"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:fontFamily="sans-serif-condensed" />
+            android:fontFamily="sans-serif-condensed"
+            android:onClick="startC"
+            android:typeface="monospace"
+            android:backgroundTint="@color/colorAccent" />
 
         <TextView
-            android:text="Para empezar el juego"
+            android:text="GEOGAME"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="24sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:id="@+id/textView2"
+            android:textSize="36sp"
             android:textColor="@android:color/black"
-            android:layout_above="@+id/textView2"
-            android:layout_alignEnd="@+id/btnStarGame"
-            android:layout_marginBottom="31dp" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:fontFamily="sans-serif-condensed" />
 
-        <RadioGroup
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:weightSum="1"
-            android:id="@+id/radioGroup"
-            android:checkedButton="@+id/rbtnamerica"
-            android:layout_below="@+id/textView2"
-            android:layout_alignParentStart="true">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="64dp"
-                android:orientation="horizontal">
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:checkedButton="@+id/rbtnEurope"
-                    android:orientation="horizontal">
-                    <RadioButton
-                        android:text="Europa"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/rbtnEurope"
-                        android:layout_weight="1" />
-
-                    <RadioButton
-                        android:text="Asia"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/rbtnAsia"
-                        android:layout_weight="1" />
-
-                    <RadioButton
-                        android:text="America"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/rbtnAmerica"
-                        android:duplicateParentState="false"
-                        android:checked="false"
-                        android:layout_weight="1" />
-
-                    <RadioButton
-                        android:text="Africa"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/rbtnAfrica"
-                        android:layout_weight="1" />
-
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="1.18">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/europe_512"
-                    android:id="@+id/imageView8"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/asia_512"
-                    android:id="@+id/imageView9"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/america_512"
-                    android:id="@+id/imageView7"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/africa_512"
-                    android:id="@+id/imageView11"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-        </RadioGroup>
+            app:srcCompat="@drawable/america_512"
+            android:id="@+id/imageView5"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
 
     </RelativeLayout>
 
