@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -35,6 +36,22 @@ public class MapGame extends AppCompatActivity implements OnMapReadyCallback {
                         .setAction("Action", null).show();
             }
         });
+
+        int i=getIntent().getIntExtra("mode",0);
+
+        switch (i){
+            case 0:
+                Toast.makeText(this,"FACIL",Toast.LENGTH_SHORT).show();
+                break;
+            case 1:
+                Toast.makeText(this,"MEDIO",Toast.LENGTH_SHORT).show();
+                break;
+            case 2:
+
+                Toast.makeText(this,"DIFICIL",Toast.LENGTH_SHORT).show();
+                break;
+        }
+
         mapView= (MapView) findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         if(mapView!=null){
