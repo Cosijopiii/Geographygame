@@ -1,6 +1,9 @@
 package com.unistmo.geographygame;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
@@ -20,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +44,8 @@ public class Categories extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-
+    CharSequence data[] = new CharSequence[] {"Facil", "Medio", "Dificil"};
+    AlertDialog.Builder builder=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,9 +62,28 @@ public class Categories extends AppCompatActivity {
 
 
     }
+    public AlertDialog.Builder makeAlert(){
+        if(builder!=null){
+            return builder;
+        }
 
+        builder=new AlertDialog.Builder(this);
+        builder.setTitle("Escoja la dificultad");
+        builder.setItems(data, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent=new Intent(getBaseContext(),MapGameActivity.class);
+                intent.putExtra("mode",which);
+                intent.putExtra("category",mViewPager.getCurrentItem());
+                startActivity(intent);
+            }
+        });
+
+        return builder;
+    }
    public void test(View v){
-        Toast.makeText(this,mSectionsPagerAdapter.getPageTitle(mViewPager.getCurrentItem()),Toast.LENGTH_SHORT).show();
+
+        makeAlert().show();
 
     }
 
@@ -117,18 +141,23 @@ public class Categories extends AppCompatActivity {
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_categories, container, false);
             ImageView imageView= (ImageView) rootView.findViewById(R.id.img);
+            Button button= (Button) rootView.findViewById(R.id.btnGO);
                 switch (getArguments().getInt(ARG_SECTION_NUMBER)){
                     case 1:
                         imageView.setImageResource(R.drawable.america_512);
+                        button.setText("AMERICA");
                         break;
                     case 2:
                         imageView.setImageResource(R.drawable.africa_512);
+                        button.setText("AFRICA");
                         break;
                     case 3:
                         imageView.setImageResource(R.drawable.europe_512);
+                        button.setText("EUROPA");
                         break;
                     case 4:
                         imageView.setImageResource(R.drawable.asia_512);
+                        button.setText("ASIA");
                         break;
 
                 }

@@ -10,40 +10,6 @@
     tools:context="com.unistmo.geographygame.Categories$PlaceholderFragment"
     android:background="@android:color/white">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/america_512"
-        android:id="@+id/img"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/section_label" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="22dp"
-        android:id="@+id/textView3"
-        android:textSize="28sp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:textAlignment="center"
-        android:fontFamily="sans-serif-condensed"
-        android:text="ESCOJE UNA CATEGORIA" />
-
-    <Button
-        android:text="test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/btnGO"
-        android:onClick="test"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif-condensed"
-        android:textSize="18sp" />
-
     <TextView
         android:text="«"
         android:layout_width="wrap_content"
@@ -64,5 +30,37 @@
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignBottom="@+id/textView4"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textSize="28sp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed"
+        android:text="ESCOJE UNA CATEGORIA"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/america_512"
+        android:id="@+id/img"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGO"
+        android:onClick="test"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:elevation="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-condensed" />
 
 </RelativeLayout>

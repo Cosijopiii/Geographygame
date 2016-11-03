@@ -15,18 +15,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
+
 public class MapGameActivity extends AppCompatActivity {
 
     /**
      * MAP KEY
      */
     private static final String MAPVIEW_BUNDLE_KEY = String.valueOf(R.string.google_android_map_api_key);
-
-
 
     /**
      * Some older devices needs a small delay between UI widget updates
@@ -64,13 +59,8 @@ public class MapGameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_fullgamemap);
-
-
-
         hide();
-
         mapView= (MapView) findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
         if(mapView!=null){
@@ -87,8 +77,6 @@ public class MapGameActivity extends AppCompatActivity {
         // are available.
         delayedHide(100);
     }
-
-
 
     private void hide() {
         // Hide UI first
