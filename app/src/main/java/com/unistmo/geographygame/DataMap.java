@@ -35,7 +35,7 @@ public class DataMap extends IntentService {
             return map;
         }
         map =new HashMap<>();
-
+//http://www.coordenadas-gps.com
         List<Pais> america =new ArrayList<>();
         america.add(new Pais("México",new LatLng(23.634501,-102.55278399999997),1));
         america.add(new Pais("Canadá",new LatLng(56.130366,-106.34677099999999),2));
