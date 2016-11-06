@@ -2,11 +2,13 @@ package com.unistmo.geographygame;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import java.io.Serializable;
+
 /**
  * Created by cosijopii on 02/11/16.
  */
 
-public class Pais {
+public class Pais implements Serializable{
 
     private String nombrePais;
     private LatLng latLng;
@@ -16,6 +18,15 @@ public class Pais {
         this.nombrePais = nombrePais;
         this.latLng = latLng;
         this.id = id;
+    }
+
+    public Pais(Pais pais) {
+        this.nombrePais = pais.getNombrePais();
+        this.latLng = pais.getLatLng();
+        this.id = pais.getId();
+    }
+
+    public Pais() {
     }
 
     public String getNombrePais() {

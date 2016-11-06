@@ -4,13 +4,9 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -25,8 +21,6 @@ import android.view.ViewGroup;
 
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class Categories extends AppCompatActivity {
 
@@ -44,7 +38,9 @@ public class Categories extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    CharSequence data[] = new CharSequence[] {"Facil", "Medio", "Dificil"};
+    public static  final String MODE[] = new String[] {"Facil", "Medio", "Dificil"};
+    public static final String COUNTRIES[] = new String[] {"America", "Africa", "Europa","Asia"};
+
     AlertDialog.Builder builder=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +65,13 @@ public class Categories extends AppCompatActivity {
 
         builder=new AlertDialog.Builder(this);
         builder.setTitle("Escoja la dificultad");
-        builder.setItems(data, new DialogInterface.OnClickListener() {
+        builder.setItems(MODE, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent=new Intent(getBaseContext(),MapGameActivity.class);
-                intent.putExtra("mode",which);
-                intent.putExtra("category",mViewPager.getCurrentItem());
+                intent.putExtra("mode", MODE[which]);
+                intent.putExtra("category", COUNTRIES[mViewPager.getCurrentItem()]);
+
                 startActivity(intent);
             }
         });
