@@ -117,18 +117,12 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
     public void changeCoButtons(){
 
         mapGameActivity.getButtonTargets().clear();
-        for (Pais p: mapGameActivity.getButtonTargets()) {
-            Log.d("TEST", "onCreate: CARROT"+p);
-        }
 
-        mapGameActivity.setButtonTargets(new ArrayList<>(getListFromCategory(category)));
-        mapGameActivity.getButtonTargets().remove(mapGameActivity.getTarget());
-        mapGameActivity.getButtonTargets().set(0,mapGameActivity.getTarget());
+
+        mapGameActivity.setButtonTargets(getListFromCategory(category));
+        mapGameActivity.getButtonTargets().remove(mapGameActivity.getTargetMap());
+        mapGameActivity.getButtonTargets().set(0,mapGameActivity.getTargetMap());
         mapGameActivity.setButtonTargets(new ArrayList<>(mapGameActivity.getButtonTargets().subList(0,getDiffromMode(mode))));
-
-        for (Pais p: mapGameActivity.getButtonTargets()) {
-            Log.d("TEST", "onCreate: CARROT"+p);
-        }
 
     }
 
@@ -208,12 +202,14 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
     public void checkB(Button b){
 
-        if( b.getText().toString().equalsIgnoreCase(mapGameActivity.getTargetMap().getNombrePais())){
+        if( b.getText().toString().equalsIgnoreCase(mapGameActivity.getTarget().getNombrePais())){
             makeAlert(R.drawable.ic_check_green_700_48dp);
             moveToAnotherCountry();
+            goods++;
         }else{
             makeAlert(R.drawable.ic_close_red_900_48dp);
             moveToAnotherCountry();
+            bads++;
         }
 
 
@@ -277,12 +273,13 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
     public void moveToAnotherCountry(){
 
 
-        if(count>4){
+        if(count>=5){
 
-            Toast.makeText(mapGameActivity,"SUPER POTATOHHOT",Toast.LENGTH_SHORT).show();
-            //abrir resultados
+            Toast.makeText(mapGameActivity,goods+" "+bads,Toast.LENGTH_SHORT).show();
+
 
         }else {
+            mapGameActivity.getContador().setText(count+1+" de 5");
             map.clear();
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(mapGameActivity.getMapTargets().get(count).getLatLng(), 4));
             map.addMarker(new MarkerOptions().position(mapGameActivity.getMapTargets().get(count).getLatLng()));
@@ -308,8 +305,6 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
         this.map=map;
         map.setMapStyle( MapStyleOptions.loadRawResourceStyle(mapGameActivity, R.raw.styleold));
         map.getUiSettings().setMapToolbarEnabled(false);
-        mapGameActivity.setTargetMap(mapGameActivity.getMapTargets().get(0));
-        mapGameActivity.setTarget(mapGameActivity.getMapTargets().get(0));
 
         moveToAnotherCountry();
 

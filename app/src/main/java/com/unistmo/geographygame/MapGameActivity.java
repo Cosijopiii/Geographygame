@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -76,12 +77,13 @@ public class MapGameActivity extends AppCompatActivity {
 
     private Pais target;
 
-
+    private TextView contador;
     private Pais targetMap;
     private List<Pais> mapTargets;
 
 
     private List<Pais> buttonTargets;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +101,7 @@ public class MapGameActivity extends AppCompatActivity {
           b6= (Button) findViewById(R.id.btnr6);
           b7= (Button) findViewById(R.id.btnr7);
           b8= (Button) findViewById(R.id.btnr8);
-
+         contador= (TextView) findViewById(R.id.nContador);
         mode=getIntent().getStringExtra("mode");
         category=getIntent().getStringExtra("category");
 
@@ -310,5 +312,13 @@ public class MapGameActivity extends AppCompatActivity {
 
     public void setButtonTargets(List<Pais> buttonTargets) {
         this.buttonTargets = buttonTargets;
+    }
+
+    public TextView getContador() {
+        return contador;
+    }
+
+    public void setContador(TextView contador) {
+        this.contador = contador;
     }
 }
