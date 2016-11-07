@@ -26,4 +26,5 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_categories">Categories</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_final">Final</string>
 </resources>

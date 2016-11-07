@@ -36,6 +36,10 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
     private int goods=0;
     private int bads=0;
     private List<Pais> america;
+    private List<Pais> africa;
+    private List<Pais> europa;
+    private List<Pais> asia;
+
     private String mode;
     private String category;
     private GoogleMap map;
@@ -47,6 +51,12 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
         this.category=category;
         america  =new ArrayList<>();
         setDataAmerica();
+        africa  =new ArrayList<>();
+        setDataAfrica();
+        europa  =new ArrayList<>();
+        setDataEuropa();
+        asia  =new ArrayList<>();
+        setDataAsia();
     }
 
     public void setDataAmerica(){
@@ -75,6 +85,84 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
 
     }
+    public void setDataAfrica(){
+
+
+        africa.add(new Pais("Angola",new LatLng(-11.202692,17.873886999999968),1));
+        africa.add(new Pais("Argelia",new LatLng(28.033886,1.659626000000003),2));
+        africa.add(new Pais("Congo",new LatLng(-0.228021,15.82765900000004),3));
+        africa.add(new Pais("Egipto",new LatLng(26.820553,30.802498000000014),4));
+        africa.add(new Pais("Libia",new LatLng(27.039556602163195,17.60009765625),5));
+        africa.add(new Pais("Chad",new LatLng(14.966013251567164,18.74267578125),6));
+        africa.add(new Pais("Camerun",new LatLng(5.61598581915534,12.63427734375),7));
+        africa.add(new Pais("Guinea Ecuatorial",new LatLng(1.5598658653430082,10.34912109375),8));
+        africa.add(new Pais("Angola",new LatLng(-12.683214911818654,17.51220703125),9));
+        africa.add(new Pais("Botsuana",new LatLng(-22.14670778001262,23.4228515625),10));
+        africa.add(new Pais("Mozambique",new LatLng(-17.5602465032949,35.61767578125),11));
+        africa.add(new Pais("Ghana",new LatLng(7.946527,-1.0231939999999895),12));
+        africa.add(new Pais("Costa de marfil",new LatLng(7.5803277913301415,-5.69091796875),13));
+        africa.add(new Pais("Liberia",new LatLng(6.118707747190845,-9.47021484375),14));
+        africa.add(new Pais("Togo",new LatLng(8.624472107633936,1.0546875),15));
+        africa.add(new Pais("Sudafrica",new LatLng(-31.109388560814963,23.13720703125),16));
+        africa.add(new Pais("Madagascar",new LatLng(-21.145992164957892,46.07666015625),17));
+        africa.add(new Pais("Marruecos",new LatLng(31.791702,-7.092620000000011),18));
+        africa.add(new Pais("Sierra Leona",new LatLng(8.460555,-11.779889000000026),19));
+        africa.add(new Pais("Senegal",new LatLng(14.370833973406821,-14.47998046875),20));
+
+
+    }
+    public void setDataEuropa(){
+
+
+        europa.add(new Pais("Albania",new LatLng(41.153332,20.168331),1));
+        europa.add(new Pais("Armenia",new LatLng(40.069099,	45.038189),2));
+        europa.add(new Pais("Austria",new LatLng(47.516231,14.550072),3));
+        europa.add(new Pais("Azerbaiyán",new LatLng(40.143105,47.576927),4));
+        europa.add(new Pais("Bulgaria",new LatLng(42.733883,25.48583),5));
+        europa.add(new Pais("Belgica",new LatLng(50.503887,4.469936),6));
+        europa.add(new Pais("Suiza",new LatLng(460.128161,18.643501	),7));
+        europa.add(new Pais("Ucrania",new LatLng(	48.379433,31.16558),8));
+        europa.add(new Pais("Suecia",new LatLng(46.818188,8.227512),9));
+        europa.add(new Pais("España",new LatLng(40.463667,-3.74922),10));
+        europa.add(new Pais("Francia",new LatLng(46.227638,2.213749),11));
+        europa.add(new Pais("Reino Unido",new LatLng(55.378051,-3.435973),12));
+        europa.add(new Pais("Islandia",new LatLng(64.963051,	-19.020835),13));
+        europa.add(new Pais("Italia",new LatLng(41.87194,12.56738),14));
+        europa.add(new Pais("Lituania",new LatLng(55.169438,23.881275),15));
+        europa.add(new Pais("Polonia",new LatLng(51.919438,19.145136),16));
+        europa.add(new Pais("Portugal",new LatLng(	39.399872,-8.224454),17));
+        europa.add(new Pais("Serbia",new LatLng(44.016521	,21.005859),18));
+        europa.add(new Pais("San Marino",new LatLng(43.94236,12.457777),19));
+        europa.add(new Pais("Noruega",new LatLng(	60.472024,8.468946),20));
+
+
+    }
+    public void setDataAsia(){
+
+
+        asia.add(new Pais("Japon",new LatLng(36.204824,138.252924),1));
+        asia.add(new Pais("Afganistán",new LatLng(33.93911,67.70995300000004),2));
+        asia.add(new Pais("Pakistan",new LatLng(29.726222319395507,68.5546875),3));
+        asia.add(new Pais("India",new LatLng(22.796439320919493,79.43115234375),4));
+        asia.add(new Pais("Nepal",new LatLng(27.761329874505233,84.74853515625),5));
+        asia.add(new Pais("Butan",new LatLng(27.274161117374682,90.4833984375),6));
+        asia.add(new Pais("Birmania",new LatLng(21.002471054356725,96.52587890625),7));
+        asia.add(new Pais("Laos",new LatLng(19.746024239625427,102.48046875),8));
+        asia.add(new Pais("Tailandia",new LatLng(15.114552871944102,101.14013671875),9));
+        asia.add(new Pais("Camboya",new LatLng(12.768946439455956,105.205078125),10));
+        asia.add(new Pais("Vietnam",new LatLng(14.349547837185362,108.21533203125),11));
+        asia.add(new Pais("Rusia",new LatLng(61.52401,105.31875600000001),12));
+        asia.add(new Pais("China",new LatLng(34.41597338448186,103.3154296875),13));
+        asia.add(new Pais("Taiwan",new LatLng(23.96617587126503,120.9814453125),14));
+        asia.add(new Pais("Filipinas",new LatLng(12.16822567739012,122.87109375),15));
+        asia.add(new Pais("Indonesia",new LatLng(-4.214943141390639,121.640625),16));
+        asia.add(new Pais("Corea del norte",new LatLng(40.17887331434696,127.1337890625),17));
+        asia.add(new Pais("Corea del sur",new LatLng(36.38591277287654,128.056640625),18));
+        asia.add(new Pais("Mongolia",new LatLng(46.46813299215553,102.9638671875),19));
+        asia.add(new Pais("Iran",new LatLng(31.80289258670676,54.5361328125),20));
+
+
+    }
 
     public List<Pais> getListFromCategory(String category){
 
@@ -83,19 +171,20 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
             case "America":
 
-            paises=america;
+             paises=america;
 
                 break;
             case "Africa":
 
-
+                paises=africa;
                 break;
-            case "Europa":
 
+            case "Europa":
+                paises=europa;
 
                 break;
             case "Asia":
-
+                paises=asia;
 
                 break;
 
@@ -189,27 +278,25 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
         new SuperActivityToast(mapGameActivity, Style.amber(), Style.TYPE_STANDARD)
                 .setText("")
-                .setDuration(Style.DURATION_SHORT)
+                .setDuration(500)
                 .setFrame(Style.FRAME_STANDARD)
                 .setIconResource(id)
                 .setGravity(Gravity.CENTER, 0, 0)
                 .show();
-
-
-
-
     }
 
     public void checkB(Button b){
 
         if( b.getText().toString().equalsIgnoreCase(mapGameActivity.getTarget().getNombrePais())){
             makeAlert(R.drawable.ic_check_green_700_48dp);
-            moveToAnotherCountry();
             goods++;
+            moveToAnotherCountry();
+
         }else{
             makeAlert(R.drawable.ic_close_red_900_48dp);
-            moveToAnotherCountry();
             bads++;
+            moveToAnotherCountry();
+
         }
 
 
@@ -259,10 +346,10 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
         List<Pais> paises=new ArrayList<>();
 
         Collections.shuffle(getListFromCategory(category));
-        target=america.get(0);
+        target=getListFromCategory(category).get(0);
         paises.add(target);
         for (int i = 1; i <5 ; i++) {
-            paises.add(america.get(i));
+            paises.add(getListFromCategory(category).get(i));
         }
 
 
@@ -275,7 +362,11 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
         if(count>=5){
 
-            Toast.makeText(mapGameActivity,goods+" "+bads,Toast.LENGTH_SHORT).show();
+        Intent i=new Intent(mapGameActivity,Final.class);
+
+            i.putExtra("ok",goods);
+
+            mapGameActivity.startActivity(i);
 
 
         }else {
@@ -293,9 +384,9 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
             }
 
         }
-        Log.d("COUNT", "moveToAnotherCountry: "+count);
+        Log.d("COUNT", "moveToAnotherCountry: "+goods+" "+bads);
         count++;
-
+        Log.d("COUNT", "moveToAnotherCountry: "+count);
 
 
     }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_final"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.unistmo.geographygame.Final"
+    tools:showIn="@layout/activity_final">
+
+    <TextView
+        android:text="DESEA JUGAR DE NUEVO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView6"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@android:color/black"
+        android:textAlignment="center" />
+
+    <Button
+        android:text="NO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="38dp"
+        android:id="@+id/noSeguir"
+        android:textSize="24sp"
+        android:layout_alignTop="@+id/seguir"
+        android:layout_alignParentEnd="true"
+        android:fontFamily="sans-serif-condensed" />
+
+    <Button
+        android:text="SI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seguir"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginStart="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="192dp" />
+
+    <TextView
+        android:text="TUVISTE X DE 5 ACIERTOS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/aciertos"
+        android:textSize="36sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="54dp" />
+</RelativeLayout>
