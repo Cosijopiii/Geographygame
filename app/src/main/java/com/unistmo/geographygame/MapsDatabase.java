@@ -1,6 +1,7 @@
 package com.unistmo.geographygame;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 
@@ -27,8 +28,25 @@ public class MapsDatabase extends SQLiteAssetHelper {
         String sqlTables = "DataMaps";
 
         qb.setTables(sqlTables);
+        Cursor c = qb.query(db, sqlSelect, null, null,
+                null, null, null);
 
+        c.moveToFirst();
+       ArrayList<Maps> data=new ArrayList<>();
+       do {
+           Maps m=new Maps();
+           m.setId(c.getInt(c.getColumnIndex(sqlSelect[0])));
+           m.setNombre(c.getString(c.getColumnIndex(sqlSelect[1])));
+           m.setCapital(c.getString(c.getColumnIndex(sqlSelect[2])));
+           m.setLat(c.getDouble(c.getColumnIndex(sqlSelect[3])));
+           m.setLog(c.getDouble(c.getColumnIndex(sqlSelect[4])));
+           m.setContinente(c.getString(c.getColumnIndex(sqlSelect[5])));
+           data.add(m);
 
+       }while (c.moveToNext());
+        db.close();
+        c.close();
+    return data;
     }
 
 

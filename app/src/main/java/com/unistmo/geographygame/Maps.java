@@ -14,6 +14,8 @@ public class Maps {
     private double log;
     private String continente;
 
+    public Maps() {}
+
     public Maps(int id, String nombre, String capital, double lat, double log, String continente) {
         this.id = id;
         this.nombre = nombre;
