@@ -39,7 +39,7 @@ public class Categories extends AppCompatActivity {
      */
     private ViewPager mViewPager;
     public static  final String MODE[] = new String[] {"Facil", "Medio", "Dificil"};
-    public static final String COUNTRIES[] = new String[] {"America", "Africa", "Europa","Asia"};
+    public static final String COUNTRIES[] = new String[] {"America", "Africa", "Europa","Asia","Australia"};
 
     AlertDialog.Builder builder=null;
     @Override
@@ -71,7 +71,6 @@ public class Categories extends AppCompatActivity {
                 Intent intent=new Intent(getBaseContext(),MapGameActivity.class);
                 intent.putExtra("mode", MODE[which]);
                 intent.putExtra("category", COUNTRIES[mViewPager.getCurrentItem()]);
-
                 startActivity(intent);
             }
         });
@@ -156,6 +155,10 @@ public class Categories extends AppCompatActivity {
                         imageView.setImageResource(R.drawable.asia_512);
                         button.setText("ASIA");
                         break;
+                    case 5:
+                        imageView.setImageResource(R.drawable.australia);
+                        button.setText("AUSTRALIA");
+                        break;
 
                 }
 //            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
@@ -184,7 +187,7 @@ public class Categories extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 4;
+            return 5;
         }
 
         @Override
@@ -198,6 +201,8 @@ public class Categories extends AppCompatActivity {
                     return "SECTION 3";
                 case 3:
                     return "SECTION 4";
+                case 4:
+                    return "SECTION 5";
             }
             return null;
         }

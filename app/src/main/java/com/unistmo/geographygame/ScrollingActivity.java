@@ -88,7 +88,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
     public void startC(View view){
 
-        Intent i=new Intent(this,Categories.class);
+        Intent i=new Intent(this,Categories_Main.class);
         startActivity(i);
     }
 
