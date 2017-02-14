@@ -24,7 +24,7 @@ public class MapsDatabase extends SQLiteAssetHelper {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
-        String [] sqlSelect = {"id", "Nombre","Capital","latitud","Longitud","Continente"};
+        String [] sqlSelect = {"id", "Nombre","Capital","latitud","Longitud","Continente","Cp"};
         String sqlTables = "DataMaps";
 
         qb.setTables(sqlTables);
@@ -41,6 +41,7 @@ public class MapsDatabase extends SQLiteAssetHelper {
            m.setLat(c.getDouble(c.getColumnIndex(sqlSelect[3])));
            m.setLog(c.getDouble(c.getColumnIndex(sqlSelect[4])));
            m.setContinente(c.getString(c.getColumnIndex(sqlSelect[5])));
+           m.setCp(c.getString(c.getColumnIndex(sqlSelect[6])));
            data.add(m);
 
        }while (c.moveToNext());

@@ -12,17 +12,27 @@ public class Maps {
     private String capital;
     private double lat;
     private double log;
+    private String Cp;
     private String continente;
 
     public Maps() {}
 
-    public Maps(int id, String nombre, String capital, double lat, double log, String continente) {
+    public Maps(int id, String nombre, String capital, double lat, double log, String continente,String Cp) {
         this.id = id;
         this.nombre = nombre;
         this.capital = capital;
         this.lat = lat;
         this.log = log;
+        this.Cp=Cp;
         this.continente = continente;
+    }
+
+    public String getCp() {
+        return Cp;
+    }
+
+    public void setCp(String cp) {
+        Cp = cp;
     }
 
     public int getId() {
@@ -81,6 +91,7 @@ public class Maps {
                 ", capital='" + capital + '\'' +
                 ", lat=" + lat +
                 ", log=" + log +
+                ", Cp='" + Cp + '\'' +
                 ", continente='" + continente + '\'' +
                 '}';
     }
