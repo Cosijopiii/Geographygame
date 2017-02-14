@@ -74,6 +74,7 @@ public class Final extends AppCompatActivity {
     }
     Button ok;
     Button nok;
+    int codefinal;
     TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +82,9 @@ public class Final extends AppCompatActivity {
         setContentView(R.layout.activity_final);
 
         int i=getIntent().getIntExtra("ok",0);
+
+        codefinal=getIntent().getIntExtra("final",0);
+
         textView= (TextView) findViewById(R.id.aciertos);
         textView.setText("OBTUVISTE "+i+" DE 5 ACIERTOS");
         ok= (Button) findViewById(R.id.seguir);
@@ -88,8 +92,20 @@ public class Final extends AppCompatActivity {
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(v.getContext(),Categories.class);
-                startActivity(i);
+
+                if(codefinal==25){
+                    Intent x=new Intent(v.getContext(),MapGameActivity.class);
+                    x.putExtra("code",3);
+                    x.putExtra("mode", "medio");
+                    x.putExtra("category", "none");
+
+                    startActivity(x);
+                }
+                else {
+                    Intent i = new Intent(v.getContext(), Categories.class);
+                    i.putExtra("code", getIntent().getIntExtra("code", 0));
+                    startActivity(i);
+                }
             }
         });
         nok.setOnClickListener(new View.OnClickListener() {

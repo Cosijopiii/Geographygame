@@ -30,29 +30,31 @@ import java.util.List;
 
 public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
-    private MapGameActivity mapGameActivity;
+    protected MapGameActivity mapGameActivity;
 
-    private int count=0;
-    private int goods=0;
-    private int bads=0;
-    private List<Pais> america;
-    private List<Pais> africa;
-    private List<Pais> europa;
-    private List<Pais> asia;
-    private List<Pais> australia;
-    private String mode;
-    private String category;
-    private GoogleMap map;
-    private  AlertDialog.Builder builder=null;
-    MapsDatabase db;
-    ArrayList<Maps> dbmap;
-    public ControlMap(MapGameActivity mapGameActivity,String mode,String category) {
+    protected int count=0;
+    protected int goods=0;
+    protected int bads=0;
+    protected List<Pais> america;
+    protected List<Pais> africa;
+    protected List<Pais> europa;
+    protected List<Pais> asia;
+    protected List<Pais> australia;
+    protected String mode;
+    protected String category;
+    protected GoogleMap map;
+    protected AlertDialog.Builder builder=null;
+    protected MapsDatabase db;
+    protected ArrayList<Maps> dbmap;
+    protected int code=0;
+    public ControlMap(MapGameActivity mapGameActivity,String mode,String category,int code) {
 
         db = new MapsDatabase(mapGameActivity);
         dbmap=db.getalldatamaps();
         this.mapGameActivity = mapGameActivity;
         this.mode=mode;
         this.category=category;
+        this.code=code;
         america  =new ArrayList<>();
         setDataAmerica();
         africa  =new ArrayList<>();
@@ -69,7 +71,7 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
         for (Maps m:dbmap) {
             if (m.getContinente().equals("Norteamérica") || m.getContinente().equals("Sudamérica")){
-            america.add(new Pais(m.getNombre(),new LatLng(m.getLat(),m.getLog()),0));
+            america.add(new Pais(m.getNombre(),new LatLng(m.getLat(),m.getLog()),0,m.getCapital(),m.getContinente()));
             }
         }
 
@@ -78,7 +80,7 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
         for (Maps m:dbmap) {
             if (m.getContinente().equals("África")){
-                africa.add(new Pais(m.getNombre(),new LatLng(m.getLat(),m.getLog()),0));
+                africa.add(new Pais(m.getNombre(),new LatLng(m.getLat(),m.getLog()),0,m.getCapital(),m.getContinente()));
             }
         }
     }
@@ -86,7 +88,7 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
         for (Maps m:dbmap) {
             if (m.getContinente().equals("Europa") ){
-                europa.add(new Pais(m.getNombre(),new LatLng(m.getLat(),m.getLog()),0));
+                europa.add(new Pais(m.getNombre(),new LatLng(m.getLat(),m.getLog()),0,m.getCapital(),m.getContinente()));
             }
         }
 
@@ -95,7 +97,7 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
         for (Maps m:dbmap) {
             if (m.getContinente().equals("Asia") ){
-                asia.add(new Pais(m.getNombre(),new LatLng(m.getLat(),m.getLog()),0));
+                asia.add(new Pais(m.getNombre(),new LatLng(m.getLat(),m.getLog()),0,m.getCapital(),m.getContinente()));
             }
         }
 
@@ -104,7 +106,7 @@ public class ControlMap implements OnMapReadyCallback, View.OnClickListener{
 
         for (Maps m:dbmap) {
             if (m.getContinente().equals("Australia") ){
-                australia.add(new Pais(m.getNombre(),new LatLng(m.getLat(),m.getLog()),0));
+                australia.add(new Pais(m.getNombre(),new LatLng(m.getLat(),m.getLog()),0,m.getCapital(),m.getContinente()));
             }
         }
 

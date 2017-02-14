@@ -44,10 +44,6 @@ public class DataMap extends Service {
         map =new HashMap<>();
         List<Pais> america =new ArrayList<>();
 
-        for (int i = 0; i <20 ; i++) {
-            america.add(new Pais(americaConuntries[i],getLatfromString(getBaseContext(),americaConuntries[i]),i));
-        }
-
 
        /* america.add(new Pais("México",new LatLng(23.634501,-102.55278399999997),1));
         america.add(new Pais("Canadá",new LatLng(56.130366,-106.34677099999999),2));

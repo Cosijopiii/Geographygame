@@ -72,6 +72,7 @@ public class MapGameActivity extends AppCompatActivity {
     private Button b8;
     private String mode;
     private String category;
+    private TextView titleQ;
 
 
 
@@ -83,6 +84,7 @@ public class MapGameActivity extends AppCompatActivity {
 
 
     private List<Pais> buttonTargets;
+    private int code;
 
 
     @Override
@@ -92,7 +94,7 @@ public class MapGameActivity extends AppCompatActivity {
         hide();
         mapView= (MapView) findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
-
+        titleQ = (TextView) findViewById(R.id.titleQ);
           b1= (Button) findViewById(R.id.btnr1);
           b2= (Button) findViewById(R.id.btnr2);
           b3= (Button) findViewById(R.id.btnr3);
@@ -104,8 +106,21 @@ public class MapGameActivity extends AppCompatActivity {
          contador= (TextView) findViewById(R.id.nContador);
         mode=getIntent().getStringExtra("mode");
         category=getIntent().getStringExtra("category");
+        code=getIntent().getIntExtra("code",code);
 
-        controlMap =new ControlMap(this,mode,category);
+        switch (code){
+            case 1:  controlMap =new ControlMap(this,mode,category,code);
+                break;
+            case 2: controlMap= new ControlMapCapitales(this,mode,category,code);
+                break;
+            case 3: controlMap= new ControlMapContinentes(this,mode,category,code);
+                break;
+        }
+
+
+
+
+
         if(mapView!=null){
             mapView.getMapAsync(controlMap);
         }
@@ -132,7 +147,13 @@ public class MapGameActivity extends AppCompatActivity {
 
     }
 
+    public TextView getTitleQ() {
+        return titleQ;
+    }
 
+    public void setTitleQ(TextView titleQ) {
+        this.titleQ = titleQ;
+    }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

@@ -39,8 +39,8 @@ public class Categories extends AppCompatActivity {
      */
     private ViewPager mViewPager;
     public static  final String MODE[] = new String[] {"Facil", "Medio", "Dificil"};
-    public static final String COUNTRIES[] = new String[] {"America", "Africa", "Europa","Asia","Australia"};
-
+    public static final String COUNTRIES[] = new String[] {"America", "África", "Europa","Asia","Australia"};
+    public int code=0;
     AlertDialog.Builder builder=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class Categories extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
+        code=getIntent().getIntExtra("code",code);
 
 
     }
@@ -71,6 +71,7 @@ public class Categories extends AppCompatActivity {
                 Intent intent=new Intent(getBaseContext(),MapGameActivity.class);
                 intent.putExtra("mode", MODE[which]);
                 intent.putExtra("category", COUNTRIES[mViewPager.getCurrentItem()]);
+                intent.putExtra("code",code);
                 startActivity(intent);
             }
         });
